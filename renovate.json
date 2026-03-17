@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+    "schedule:automergeWeekdays"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["ghcr.io/apollographql/apollo-runtime"],
+      "allowedVersions": "/^\\d+\\.\\d+\\.\\d+_router\\d+\\.\\d+\\.\\d+_mcp-server\\d+\\.\\d+\\.\\d+$/",
+      "versioning": "loose",
+      "prCreation": "immediate"
+    }
+  ]
+}
